@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<welcome-file-list>
+		<welcome-file>main.jsp</welcome-file>
+	</welcome-file-list>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/pageNotFound.html</location>
+	</error-page>
+	<servlet>
+		<description></description>
+		<display-name>AllDishServlet</display-name>
+		<servlet-name>AllDishServlet</servlet-name>
+		<servlet-class>com.ua.controller.AllDishServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description></description>
+		<display-name>AdminController</display-name>
+		<servlet-name>AdminController</servlet-name>
+		<servlet-class>com.ua.controller.AdminController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AdminController</servlet-name>
+		<url-pattern>/admin</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet-mapping>
+		<servlet-name>AllDishServlet</servlet-name>
+		<url-pattern>/AllDishServlet</url-pattern>
+	</servlet-mapping>
+	<resource-ref>
+		<description>MySQL Datasource example</description>
+		<res-ref-name>jdbc/eShop</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
+
+	<filter>
+		<filter-name>EncodingFilter</filter-name>
+		<filter-class>com.ua.filters.EncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+
+	</filter>
+
+	<filter-mapping>
+		<filter-name>EncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<filter>
+		<display-name>LanguageFilter</display-name>
+		<filter-name>LanguageFilter</filter-name>
+		<filter-class>com.ua.filters.LanguageFilter</filter-class>
+	</filter>
+	<filter>
+		<description>
+		</description>
+		<display-name>SecurityFilter</display-name>
+		<filter-name>SecurityFilter</filter-name>
+		<filter-class>com.ua.filters.SecurityFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>LanguageFilter</filter-name>
+		<url-pattern>/LanguageFilter</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>SecurityFilter</filter-name>
+		<url-pattern>/SecurityFilter</url-pattern>
+	</filter-mapping>
+
+
+	<context-param>
+		<param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+		<param-value>messages</param-value>
+	</context-param>
+
+	<jsp-config>
+		<taglib>
+			<taglib-uri>eShop/bigText</taglib-uri>
+			<taglib-location>/WEB-INF/tag/bigText.tld</taglib-location>
+		</taglib>
+	</jsp-config>
+
+
+</web-app>

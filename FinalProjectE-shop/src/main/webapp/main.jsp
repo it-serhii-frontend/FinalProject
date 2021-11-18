@@ -1,0 +1,115 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="myprefix" uri="WEB-INF/tag/bigText.tld"%>
+<%@ taglib prefix="my" tagdir="/WEB-INF/tags"%>
+
+
+<fmt:setLocale value="${requestScope.lang}" />
+<fmt:setBundle basename="messages" />
+
+<!DOCTYPE html-->
+<html lang="${requestScope.lang}">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title><fmt:message key="header.title" /></title>
+
+<link href="css/main.css" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+	crossorigin="anonymous"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	crossorigin="anonymous"></script>
+
+
+
+</head>
+<body>
+
+
+	<div class="view">
+		<div class="pages">
+			<jsp:include page="/header.jsp"></jsp:include>
+		</div>
+	</div>
+
+
+	<div id="carouselExampleSlidesOnly" class="carousel slide"
+		data-ride="carousel">
+
+		<div class="txt-b">
+			<span class="sm">Чайна мануфактура</span> <br> <span class="txt">Vantea</span>
+			<br> <span class="sm">Кожна випита чашка нашого запашного
+				чаю</span> <br> <span class="sm">зробить вас щасливіше</span>
+		</div>
+
+
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img class="d-block w-100" src="imgs/teaBack.jpg" alt="First slide">
+
+			</div>
+			<div class="carousel-item">
+				<img class="d-block w-100" src="imgs/teaBack1.jpg"
+					alt="Second slide">
+			</div>
+
+		</div>
+	</div>
+
+
+	<div class="header2">
+		<myprefix:MyMsg text="real tea" />
+	</div>
+
+	<div class="container">
+		<div class="row" style="margin-left: 380px; margin-right: auto;">
+			<my:myTag title1="Карпатський" title2="Різноманітний"
+				title4="Корисний" title3="Високогірний" title5="Свій"
+				title6="Лісовий" color="black" kind="solid" thickness="3px" />
+		</div>
+	</div>
+
+	<div class="header2">Виберіть ваш чай</div>
+
+	<div class="subHead">
+		<div class="subHead2">Наш чай зібраний у високогірних
+			українських Карпатах і перероблений з любов'ю і увагою. Відчути
+			кращий смак дуже просто — достатньо нагріти воду і заварити листя
+			відповідно до рекомендацій для кожного чаю.</div>
+	</div>
+
+
+	<div class="row">
+		<div class="column">
+			<img src="imgs/cf2.jpg" alt="Snow" style="width: 100%">
+		</div>
+		<div class="column">
+			<img src="imgs/cf3.jpg" alt="Forest" style="width: 100%">
+		</div>
+
+	</div>
+	<div class="view">
+		<div class="pages">
+			<jsp:include page="/footer.jsp"></jsp:include>
+		</div>
+	</div>
+
+</body>
+
+
+</html>

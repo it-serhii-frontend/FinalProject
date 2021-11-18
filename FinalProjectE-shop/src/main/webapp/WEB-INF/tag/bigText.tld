@@ -1,0 +1,14 @@
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>2.0</jsp-version>
+	<short-name>Custom Tag</short-name>
+	<tag>
+		<name>MyMsg</name>
+		<tag-class>com.ua.customTag.OwnTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>text</name>
+			<required>true</required>
+		</attribute>
+	</tag>
+</taglib>
